@@ -1,0 +1,304 @@
+{
+    "income_statement": {
+        "Net sales": [
+            "us-gaap:Revenues",
+            "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "us-gaap:InterestAndFeeIncomeLoansAndLeases"
+
+
+        ],
+        "Cost of sales": [
+            "us-gaap:CostOfGoodsSold",
+            "us-gaap:CostOfRevenue"
+        ],
+        "Gross margin": [
+            "us-gaap:GrossProfit"
+        ],
+        "Total operating expenses": [
+            "us-gaap:OperatingExpenses",
+            "us-gaap:OperatingCostsAndExpenses",
+            "us-gaap:OperatingExpenses",
+            "us-gaap:OperatingCostsAndExpenses",
+            "us-gaap:OperatingExpenses"
+        ],
+        "Research and development": [
+            "us-gaap:ResearchAndDevelopmentExpense"
+        ],
+        "Selling, general and administrative": [
+            "us-gaap:SellingGeneralAndAdministrativeExpense",
+            "us-gaap:SellingGeneralAndAdministrativeExpense",
+            "us-gaap:SellingGeneralAndAdministrativeExpense"
+        ],
+        "Other income/(expense), net": [
+            "us-gaap:OtherNonoperatingIncomeExpense"
+        ],
+        "Operating income": [
+            "us-gaap:OperatingIncomeLoss",
+            "us-gaap:OperatingIncomeLoss",
+            "us-gaap:OperatingIncomeLoss"
+        ],
+        
+        "Income before provision for income taxes": [
+            "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "Provision for income taxes": [
+            "us-gaap:IncomeTaxExpenseBenefit"
+        ],
+        "Net income": [
+            "us-gaap:NetIncomeLoss"
+        ],
+        "Earnings per share: Basic (in dollars per share)": [
+            "us-gaap:EarningsPerShareBasic"
+        ],
+        "Earnings per share: Diluted (in dollars per share)": [
+            "us-gaap:EarningsPerShareDiluted"
+        ],
+        "Shares used in computing earnings per share: Basic (in shares)": [
+            "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic"
+        ],
+        "Shares used in computing earnings per share: Diluted (in shares)": [
+            "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+        ]
+    },
+    "balance_sheet": {
+        "Cash and cash equivalents": [
+            "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "us-gaap:CashEquivalentsAtCarryingValue",
+            "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "us-gaap:CashEquivalentsAtCarryingValue"
+        ],
+        "Marketable securities": [
+            "us-gaap:AvailableForSaleSecuritiesCurrent",
+            "us-gaap:MarketableSecuritiesCurrent",
+            "us-gaap:MarketableSecurities",
+            "us-gaap:MarketableSecuritiesCurrent",
+            "us-gaap:MarketableSecurities"
+        ],
+        "Accounts receivable, net": [
+            "us-gaap:AccountsReceivableNetCurrent"
+        ],
+        "Vendor non-trade receivables": [
+            "us-gaap:Receivables"
+        ],
+        "Inventories": [
+            "us-gaap:InventoryNet"
+        ],
+        "Other current assets": [
+            "us-gaap:OtherAssetsCurrent",
+            "us-gaap:AssetsCurrent",
+            "us-gaap:OtherAssetsCurrent",
+            "us-gaap:AssetsCurrent",
+            "us-gaap:OtherAssetsCurrent",
+            "us-gaap:PrepaidExpenseCurrent"
+        ],
+        "Total current assets": [
+            "us-gaap:AssetsCurrent"
+        ],
+        "Property, plant and equipment, net": [
+            "us-gaap:PropertyPlantAndEquipmentNet",
+            "us-gaap:PropertyPlantAndEquipmentGross",
+            "us-gaap:PropertyPlantAndEquipmentNet",
+            "us-gaap:PropertyPlantAndEquipmentOther",
+            "us-gaap:PropertyPlantAndEquipmentOtherNet",
+            "us-gaap:PropertyPlantAndEquipmentGross",
+            "us-gaap:PropertyPlantAndEquipmentNet",
+            "us-gaap:PropertyPlantAndEquipmentOther",
+            "us-gaap:PropertyPlantAndEquipmentOtherNet"
+        ],
+        "Other non-current assets": [
+            "us-gaap:OtherAssetsNoncurrent"
+        ],
+        "Total non-current assets": [
+            "us-gaap:AssetsNoncurrent"
+        ],
+        "Total assets": [
+            "us-gaap:Assets",
+            "us-gaap:Assets",
+            "us-gaap:Assets"
+        ],
+        "Accounts payable": [
+            "us-gaap:AccountsPayableCurrent"
+        ],
+        "Other current liabilities": [
+            "us-gaap:OtherLiabilitiesCurrent",
+            "us-gaap:LiabilitiesCurrent",
+            "us-gaap:EmployeeRelatedLiabilitiesCurrent",
+            "us-gaap:LiabilitiesCurrent",
+            "us-gaap:EmployeeRelatedLiabilitiesCurrent"
+        ],
+        "Deferred revenue": [
+            "us-gaap:DeferredRevenueCurrent",
+            "us-gaap:DeferredRevenue",
+            "us-gaap:DeferredRevenueCurrent",
+            "us-gaap:DeferredRevenue",
+            "us-gaap:DeferredRevenueCurrent"
+        ],
+        "Commercial paper": [
+            "us-gaap:CommercialPaper"
+        ],
+        "Term debt": [
+            "us-gaap:LongTermDebtCurrent",
+            "us-gaap:LongTermDebt",
+            "us-gaap:LongTermDebt"
+        ],
+        "Total current liabilities": [
+            "us-gaap:LiabilitiesCurrent",
+            "us-gaap:AccruedLiabilitiesCurrent",
+            "us-gaap:AccruedLiabilitiesCurrent"
+        ],
+        "Other non-current liabilities": [
+            "us-gaap:OtherLiabilitiesNoncurrent"
+        ],
+        "Total non-current liabilities": [
+            "us-gaap:LiabilitiesNoncurrent"
+        ],
+        "Total liabilities": [
+            "us-gaap:Liabilities",
+            "us-gaap:Liabilities",
+            "us-gaap:Liabilities"
+        ],
+        "Common stock, shares outstanding (in shares)": [
+            "us-gaap:CommonStockSharesOutstanding"
+        ],
+        "Common stock, shares issued (in shares)": [
+            "us-gaap:CommonStockSharesIssued",
+            "us-gaap:CommonStockValue",
+            "us-gaap:CommonStockValue"
+        ],
+        "Shareholders\u2019 equity": [
+            "us-gaap:StockholdersEquity"
+        ],
+        "Accumulated deficit": [
+            "us-gaap:AccumulatedDeficit"
+        ],
+        "Accumulated other comprehensive loss": [
+            "us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax"
+        ],
+        "Total shareholders\u2019 equity": [
+            "us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"
+        ],
+        "Total liabilities and shareholders\u2019 equity": [
+            "us-gaap:LiabilitiesAndStockholdersEquity",
+            "us-gaap:LiabilitiesAndStockholdersEquity",
+            "us-gaap:LiabilitiesAndStockholdersEquity"
+        ]
+    },
+    "cashflow_statement": {
+        "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances": [
+            "us-gaap:CashAndCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect",
+            "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"
+        ],
+        "Net income": [
+            "us-gaap:NetIncomeLoss"
+        ],
+        "Depreciation and amortization": [
+            "us-gaap:DepreciationAndAmortization",
+            "us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+            "us-gaap:Depreciation",
+            "us-gaap:DepreciationAndAmortization",
+            "us-gaap:OtherDepreciationAndAmortization",
+            "us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+            "us-gaap:Depreciation",
+            "us-gaap:DepreciationAndAmortization",
+            "us-gaap:OtherDepreciationAndAmortization"
+        ],
+        "Share-based compensation expense": [
+            "us-gaap:ShareBasedCompensation",
+            "us-gaap:AllocatedShareBasedCompensationExpense",
+            "us-gaap:AllocatedShareBasedCompensationExpense"
+        ],
+        "Accounts receivable, net": [
+            "us-gaap:IncreaseDecreaseInAccountsReceivable"
+        ],
+        "Vendor non-trade receivables": [
+            "us-gaap:IncreaseDecreaseInReceivables"
+        ],
+        "Inventories": [
+            "us-gaap:IncreaseDecreaseInInventories"
+        ],
+        "Other current and non-current assets": [
+            "us-gaap:IncreaseDecreaseInOtherOperatingAssets"
+        ],
+        "Accounts payable": [
+            "us-gaap:IncreaseDecreaseInAccountsPayable"
+        ],
+        "Other current and non-current liabilities": [
+            "us-gaap:IncreaseDecreaseInOtherOperatingLiabilities"
+        ],
+        "Purchases of marketable securities": [
+            "us-gaap:PaymentsToAcquireAvailableForSaleSecurities",
+            "us-gaap:PaymentsToAcquireMarketableSecurities",
+            "us-gaap:PaymentsToAcquireMarketableSecurities"
+        ],
+        "Proceeds from maturities of marketable securities": [
+            "us-gaap:ProceedsFromMaturitiesOfAvailableForSaleSecurities"
+        ],
+        "Proceeds from sales of marketable securities": [
+            "us-gaap:ProceedsFromSaleOfAvailableForSaleSecurities",
+            "us-gaap:ProceedsFromSaleAndMaturityOfMarketableSecurities",
+            "us-gaap:ProceedsFromSaleAndMaturityOfMarketableSecurities"
+        ],
+        "Payments for acquisition of property, plant and equipment": [
+            "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+            "us-gaap:PaymentsToAcquireOilAndGasPropertyAndEquipment",
+            "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+            "us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment",
+            "us-gaap:PaymentsToAcquireOilAndGasPropertyAndEquipment",
+            "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+            "us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment"
+        ],
+        "Payments for dividends and dividend equivalents": [
+            "us-gaap:PaymentsOfDividends"
+        ],
+        "Repurchases of common stock": [
+            "us-gaap:PaymentsForRepurchaseOfCommonStock"
+        ],
+        "Proceeds from issuance of term debt, net": [
+            "us-gaap:ProceedsFromLongTermDebt"
+        ],
+        "Repayments of term debt": [
+            "us-gaap:RepaymentsOfLongTermDebt",
+            "us-gaap:RepaymentsOfOtherDebt",
+            "us-gaap:RepaymentsOfLongTermDebt",
+            "us-gaap:RepaymentsOfOtherDebt",
+            "us-gaap:RepaymentsOfLongTermDebt"
+        ],
+        "Proceeds from/(Repayments of) commercial paper, net": [
+            "us-gaap:ProceedsFromCommercialPaper"
+        ],
+        "Cash used in financing activities": [
+            "us-gaap:NetCashProvidedByUsedInFinancingActivities",
+            "us-gaap:NetCashProvidedByUsedInFinancingActivities",
+            "us-gaap:NetCashProvidedByUsedInFinancingActivities"
+        ],
+        "Cash generated by operating activities": [
+            "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+            "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+            "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "Cash generated by/(used in) investing activities": [
+            "us-gaap:NetCashProvidedByUsedInInvestingActivities",
+            "us-gaap:NetCashProvidedByUsedInInvestingActivities",
+            "us-gaap:NetCashProvidedByUsedInInvestingActivities"
+        ],
+        "Increase/(Decrease) in cash, cash equivalents, and restricted cash and cash equivalents": [
+            "us-gaap:CashAndCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect",
+            "us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease",
+            "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseExcludingExchangeRateEffect",
+            "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect",
+            "us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease",
+            "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseExcludingExchangeRateEffect",
+            "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect"
+        ],
+        "Cash, cash equivalents, and restricted cash and cash equivalents, ending balances": [
+            "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "Cash paid for income taxes, net": [
+            "us-gaap:IncomeTaxesPaidNet",
+            "us-gaap:IncomeTaxesPaidNet",
+            "us-gaap:IncomeTaxesPaidNet"
+        ]
+    }
+}
