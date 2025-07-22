@@ -1,5 +1,5 @@
 # MetaSense Financial Term Extraction System
-🗂️ Project Summary: Financial Data Extraction & Standardization
+ Project Summary: Financial Data Extraction & Standardization 
 🎯 Goal
 To extract accurate financial values (like "Net Income", "Operating Expenses", etc.) from company-specific financial data (JSON/Excel formats) and match them with a standard list of terms across thousands of companies, despite variations in term.
 
