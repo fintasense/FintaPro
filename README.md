@@ -17,28 +17,30 @@ To **extract and standardize financial values** across thousands of company fili
 
 ## 📂 Project Structure
 
+```
 MetaSense/
+├── data/                    # Raw and processed data files
+│   ├── raw_json/            # JSON files from SEC EDGAR
+│   ├── raw_excel/           # Excel-based financials
+│   └── processed/           # Cleaned & joined outputs
 │
-├── data/ # Raw and processed data files
-│ ├── raw_json/ # JSON files from SEC EDGAR
-│ ├── raw_excel/ # Excel-based financials
-│ └── processed/ # Cleaned & joined outputs
+├── notebooks/               # Jupyter notebooks for experiments
 │
-├── notebooks/ # Jupyter notebooks for experiments
+├── scripts/                 # Modular Python scripts
+│   ├── extract_from_json.py
+│   ├── fuzzy_match.py
+│   ├── sbert_match.py
+│   └── evaluate_mappings.py
 │
-├── scripts/ # Modular Python scripts
-│ ├── extract_from_json.py
-│ ├── fuzzy_match.py
-│ ├── sbert_match.py
-│ └── evaluate_mappings.py
+├── models/                  # SBERT or fine-tuned models
 │
-├── models/ # SBERT or fine-tuned models
+├── utils/                   # Utility functions (logging, metrics, etc.)
 │
-├── utils/ # Utility functions (logging, metrics, etc.)
-│
-├── standard_terms.txt # Reference dictionary of financial terms
+├── standard_terms.txt       # Reference dictionary of financial terms
 ├── requirements.txt
 └── README.md
+```
+
 
 
 
