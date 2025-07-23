@@ -1,103 +1,129 @@
 # MetaSense Financial Term Extraction System
-Project Summary: Financial Data Extraction & Standardization 
-🎯 Goal
-To extract accurate financial values (like "Net Income", "Operating Expenses", etc.) from company-specific financial data (JSON/Excel formats) and match them with a standard list of terms across thousands of companies, despite variations in term.
 
-✅ What You Have Done So Far
-1. Raw Data Sources Used
-Downloaded JSON files from SEC EDGAR filings (XBRL companyfacts format).
+## Overview
 
-Worked with raw unfiltered Excel sheets for companies.
+**MetaSense** is an intelligent financial data extraction and standardization system designed to process unstructured and semi-structured financial data from thousands of companies. The system parses JSON/XBRL filings (e.g., from SEC EDGAR), Excel files, and other formats to extract key financial metrics such as Net Income, Operating Expenses, and Cash Flow, despite inconsistent terminology and reporting styles.
 
-Used both structured (XBRL) and unstructured (manual/Excel) data formats.
+## 🎯 Objective
 
-2. Standard Terms Reference
-Created a list of standard financial terms to map to (e.g., “Net Income”, “Cost of Goods Sold”).
+To **extract and standardize financial values** across thousands of company filings by mapping raw terms (e.g., "Operating Profit", "Net income attributable to controlling interest") to a consistent reference of **standard financial terms** like:
 
-Used this as the target dictionary for all mappings.
+- Net Income  
+- Operating Income  
+- Cost of Goods Sold  
+- Property, Plant & Equipment (PP&E)
 
-3. Models & Techniques Tried
-a. Basic Matching
-Manual and direct string match from raw sheets.
+---
 
-b. Fuzzy Matching
-Applied fuzzywuzzy and rapidfuzz to find close matches to standard terms.
+## 📂 Project Structure
 
-Problem: Fails with abbreviations, synonyms, or drastically different naming (e.g., "PP&E" vs "Property, Plant and Equipment").
+MetaSense/
+│
+├── data/ # Raw and processed data files
+│ ├── raw_json/ # JSON files from SEC EDGAR
+│ ├── raw_excel/ # Excel-based financials
+│ └── processed/ # Cleaned & joined outputs
+│
+├── notebooks/ # Jupyter notebooks for experiments
+│
+├── scripts/ # Modular Python scripts
+│ ├── extract_from_json.py
+│ ├── fuzzy_match.py
+│ ├── sbert_match.py
+│ └── evaluate_mappings.py
+│
+├── models/ # SBERT or fine-tuned models
+│
+├── utils/ # Utility functions (logging, metrics, etc.)
+│
+├── standard_terms.txt # Reference dictionary of financial terms
+├── requirements.txt
+└── README.md
 
-c. SBERT (Sentence-BERT) Model
-Trained a fine-tuned semantic model on Excel data.
 
-Used it to get similarity scores for term mapping.
 
-Still not robust across 9k companies due to company-specific terminologies.
 
-d. Semantic Search + F1 Score
-Used similarity metrics and scoring to try best match.
+---
 
-Issue: Scores are not consistent, still not giving perfect mappings.
+## ✅ What Has Been Implemented
 
-e. US-GAAP Tag Matching
-Explored us-gaap taxonomy tags.
+### 1. **Raw Data Handling**
+- Downloaded and parsed SEC EDGAR XBRL `companyfacts/*.json` files.
+- Handled Excel sheets from companies with non-standard formats.
 
-Tried using arelle and XBRL standards to extract canonical concept names.
+### 2. **Standardization Dictionary**
+- Created a master list of ~50 standard financial terms.
+- Used as a fixed vocabulary to map all variants encountered.
 
-Result: Even with correct tags, company-specific variations lead to inconsistent matches or missing values.
+### 3. **Matching Techniques**
 
-f. Arelle-Based Parsing
-Extracted facts using arelle engine from XBRL files.
+| Method             | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| **Exact Match**     | Direct string comparison of terms.                                          |
+| **Fuzzy Matching**  | Used `fuzzywuzzy` and `rapidfuzz` for partial and token-based matching.     |
+| **SBERT Model**     | Sentence-BERT used to semantically embed raw terms for similarity scoring. |
+| **GAAP Tag Parsing**| Extracted `us-gaap:*` fields using `arelle` and SEC JSON fact dictionary.   |
 
-Even using tags like us-gaap:NetIncomeLoss, values were either missing or wrong due to inconsistent usage by companies.
+### 4. **Challenges Encountered**
+- Mismatches due to inconsistent term naming across companies.
+- Limited GAAP tag usage or incorrect filings.
+- Composite terms (e.g., grouped R&D + SG&A).
+- Model struggling with abbreviations and nested line items.
+- No central mapping or verification source.
 
-g. Used SEC JSON Fact Dictionary
-Parsed companyfacts/*.json and checked units, labels, concepts.
+---
 
-Still faced mismatch in names and units, and not always aligned with your standard terms.
+## ❌ Known Limitations
 
-❌ Key Issues and Challenges
-1. Terminology Mismatch
-Every company uses different variations like:
+- **Semantic mismatch**: SBERT similarity does not always correlate with the numeric relevance.
+- **Inconsistent tag usage**: Even standard tags (e.g., `us-gaap:NetIncomeLoss`) are unreliable across companies.
+- **Manual intervention**: No feedback UI for error correction or quality checks.
+- **Scaling QA**: Human-in-the-loop is not feasible for 9,000+ companies without interface support.
 
-"Net income attributable to controlling interest"
+---
 
-"Income (Loss) before Income Taxes"
+## 🔍 Sample Use Case
 
-"Operating Profit" instead of "Operating Income"
+```python
+from scripts.sbert_match import SemanticTermMatcher
+from scripts.extract_from_json import extract_facts_from_sec_json
 
-Even after SBERT, semantic similarity doesn’t guarantee exact numeric matches.
+# Load standard terms
+matcher = SemanticTermMatcher("models/sbert_model/", "standard_terms.txt")
 
-2. Inconsistent XBRL/GAAP Tag Usage
-Even when using tags like us-gaap:NetIncomeLoss, the values are not always filled correctly or differ based on company filing style.
+# Load raw company facts
+facts = extract_facts_from_sec_json("data/raw_json/AAPL.json")
 
-3. Semantic Model Limitations
-Your fine-tuned SBERT model struggles with:
+# Perform matching
+mapped_terms = matcher.match(facts.keys())
 
-Abbreviations ("PPE")
+# Output result
+print(mapped_terms["Net Income"])  # → 57400000000.0 (example)
 
-Grouped terms ("Operating expenses: R&D + SG&A")
 
-Composite fields ("Total Other Income/Expense, net")
+📈 Future Improvements (Not Yet Implemented)
+Build a Streamlit interface for human verification and QA.
 
-4. Lack of a Global Dictionary
-No universal SEC/GAAP dictionary that says:
+Create a rule-based + ML hybrid system for fallback logic.
 
-"These 10 variants = Net Income"
+Connect to external sources like Compustat or CapitalIQ for validation.
 
-So even semantic models need to be manually verified and curated
+Enhance abbreviation handling and composite field decomposition.
 
-5. Scalability Problem
-With 9,000+ companies, it is impractical to manually cross-check each match.
+Introduce anomaly detection for numeric mismatches (e.g., unit or scale errors).
 
-Can't ensure accuracy without a human-in-the-loop or rule-based fallback system.
 
-6. No Visual Feedback or QA Loop
-No system to visually confirm matches or detect anomalies, so incorrect values go undetected unless checked manually.
+# Clone the repository
+git clone https://github.com/yourusername/MetaSense.git
+cd MetaSense
 
-📌 Next Suggestions (for reference, not part of submission)
-You asked not to include solutions here, but as you proceed later, options might include:
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-Hybrid Rule + Model pipeline
+# Install dependencies
+pip install -r requirements.txt
 
-External vendor dataset (like Compustat, CapitalIQ)
 
-Feedback loop via Streamlit interface to manually approve/flag predictions
+📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
